@@ -2,14 +2,14 @@
 # Run minigo... stop when it converges.
 set -e
 
-export OMP_NUM_THREADS=56
-export KMP_HW_SUBSET=28c,2T
+export OMP_NUM_THREADS=12
+export KMP_HW_SUBSET=6c,2T
 export MN_PREDICTIVE=1
 
 export KMP_BLOCKTIME=1
 export KMP_AFFINITY=compact,granularity=fine
 export TF_MKL_OPTIMIZE_PRIMITVE_MEMUSE=false
-ulimit -u 16384
+#ulimit -u 16384
 rm -rf ~/results/minigo/final/
 mkdir -p ~/results/minigo/final/
 SEED=`date +%s`
